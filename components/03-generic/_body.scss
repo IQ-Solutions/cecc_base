@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    #BODY
+\*------------------------------------*/
+
+html {
+  font-size: 16px;
+}
+
+body {
+	font-size: $base-font-size;
+  color: color($theme-color-base-darker);
+  margin: 0;
+}

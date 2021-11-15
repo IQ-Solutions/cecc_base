@@ -1,0 +1,178 @@
+{#
+/**
+ * @file
+ * Template for the order receipt.
+ *
+ * Available variables:
+ * - order_entity: The order entity.
+ * - billing_information: The billing information.
+ * - shipping_information: The shipping information.
+ * - payment_method: The payment method.
+ * - totals: An array of order totals values with the following keys:
+ *   - subtotal: The order subtotal price.
+ *   - adjustments: An array of adjustment totals:
+ *     - type: The adjustment type.
+ *     - label: The adjustment label.
+ *     - total: The adjustment total price.
+ *     - weight: The adjustment weight, taken from the adjustment type.
+ *   - total: The order total price.
+ *
+ * @ingroup themeable
+ */
+#}
+<style>
+.info .x_grid-row > div {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
+.info p {
+  margin: 0;
+}
+</style>
+<table style="margin: 15px auto 0 auto; max-width: 768px; font-family: arial,sans-serif">
+  <tbody>
+  <tr>
+    <td>
+      <table style="text-align: center; min-width: 450px; margin: 5px auto 0 auto; border: 1px solid #cccccc; border-radius: 5px; padding: 40px 30px 30px 30px;">
+        <tbody>
+        <tr>
+          <td style="font-size: 30px; padding-bottom: 30px">{{ 'Order Confirmation'|t }}</td>
+        </tr>
+        <tr>
+          <td style="padding-top:15px; padding-bottom: 15px; text-align: left; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc">
+            <p>{{ 'Standard delivery time is 7-10 business days for domestic orders.'|t}}</p>
+
+            <p>{{ 'If you have any questions about this order, please call'|t }} <a href="tel:800-352-9424">800-352-9424</a> {{ 'or email your request to'|t }} <a href="mailto:PubRequests4@mail.nih.gov">PubRequests4@mail.nih.gov</a>.{{ 'Thank you for ordering at'|t }} <a href="https://catalog.ninds.nih.gov/">catalog.ninds.nih.gov</a>.</p>
+
+            <p>{{ 'Confirmation number:'|t }} {{ order_entity.getOrderNumber }}</p>
+          </td>
+        </tr>
+        {% if order_entity.field_event_name.value %}
+        <tr>
+          <td>
+              <table style="padding-top: 15px; padding-bottom:15px; width: 100%">
+                <tbody style="text-align: left;">
+                <tr>
+                  <th colspan="2">Over Limit Order Request</th>
+                </tr>
+                <tr>
+                  {% if order_entity.field_event_name.value %}
+                    <td><strong>{{ 'Event Name'|t }}</strong>: {{ order_entity.field_event_name.value }}</td>
+                  {% endif %}
+                  {% if order_entity.field_event_location.value %}
+                    <td><strong>{{ 'Event Location'|t }}</strong>: {{ order_entity.field_event_location.value }}</td>
+                  {% endif %}
+                </tr>
+                {% if order_entity.field_cecc_over_limit_desc.value %}
+                <tr>
+                  <td colspan="2"><strong>{{ 'Description'|t }}</strong>: {{ order_entity.field_cecc_over_limit_desc.value }}</td>
+                </tr>
+                {% endif %}
+                </tbody>
+              </table>
+          </td>
+        </tr>
+        {% endif %}
+        <tr>
+          <td>
+            {% block order_items %}
+            <table style="padding-top: 15px; padding-bottom:15px; width: 100%">
+              <tbody style="text-align: left;">
+              {% for order_item in order_entity.getItems %}
+              <tr>
+                <td>
+                  {{ order_item.getQuantity|number_format }} x
+                </td>
+                <td>
+                  <span>{{ order_item.label }}</span>
+                  <span style="float: right;">{{ order_item.getTotalPrice|commerce_price_format }}</span>
+                </td>
+              </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+            {% endblock %}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {% if (billing_information or shipping_information) %}
+            <table style="width: 100%; padding-top: 15px; padding-bottom: 15px; text-align: left; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc" class="info">
+              <tbody>
+
+              <tr>
+                {% if shipping_information %}
+                <td style="width: 380px;">
+                  <table>
+                    <tbody>
+                      <tr><td style="padding-top: 5px; font-weight: bold;">{{ 'Shipping Information'|t }}</td></tr>
+                      <tr><td>{{ shipping_information.shipping_profile['#profile'].field_last_name.value }},
+                          {{ shipping_information.shipping_profile['#profile'].field_first_name.value }}</td></tr>
+                      <tr><td>{{ shipping_information.shipping_profile['#profile'].address[0]|view }}</td></tr>
+                      <tr><td>{{ shipping_information.shipping_profile['#profile'].field_phone_number.value }}</td></tr>
+                      <tr><td style="padding-top: 15px;">{{ shipping_information[0].shipment['#commerce_shipment'].shipping_method|view }}</td></tr>
+                    </tbody>
+                  </table>
+                </td>
+                {% endif %}
+
+                {% if billing_information %}
+                <td style="width: 380px;vertical-align: top;">
+                  <table style="">
+                    <tbody>
+                      <tr><td style="padding-top: 5px; font-weight: bold;">{{ 'Billing Information'|t }}</td></tr>
+                      <tr><td>{{ billing_information['#profile'].field_last_name.value }},
+                          {{ billing_information['#profile'].field_first_name.value }}</td></tr>
+                      <tr><td>{{ billing_information['#profile'].address[0]|view }}</td></tr>
+                      <tr><td>{{ billing_information['#profile'].field_phone_number.value }}</td></tr>
+                    </tbody>
+                  </table>
+                </td>
+                {% endif %}
+              </tr>
+
+              {% if payment_method %}
+                <tr>
+                  <td style="font-weight: bold; margin-top: 10px;">{{ 'Payment Method'|t }}</td>
+                </tr>
+                <tr>
+                  <td>
+                    {% block payment_method %}
+                      {{ payment_method }}
+                    {% endblock %}
+                  </td>
+                </tr>
+              {% endif %}
+              </tbody>
+            </table>
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table style="text-align: center; min-width: 450px; margin: 5px auto 0 auto; border: 1px solid #cccccc; border-radius: 5px;">
+              <tbody style="text-align: center;">
+                <tr>
+                  <td style="padding: 10px;">
+                    {{ 'Subtotal: @subtotal'|t({'@subtotal': totals.subtotal|commerce_price_format}) }}
+                  </td>
+                  {% for adjustment in totals.adjustments %}
+                  <td style="border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; padding: 10px;">
+                    {{ adjustment.label }}: {{ adjustment.total|commerce_price_format }}
+                  </td>
+                  {% endfor %}
+                  <td style="padding: 10px;">
+                    {{ 'Order Total: @total'|t({'@total': order_entity.getTotalPrice|commerce_price_format}) }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table>

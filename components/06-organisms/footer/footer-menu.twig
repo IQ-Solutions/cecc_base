@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Override of system/menu.html.twig for the footer menu.
+ */
+#}
+{% import _self as menus %}
+{#
+We call a macro which calls itself to render the full tree.
+@see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, 0, footer_style, attributes) }}
+
+{% macro menu_links(items, menu_level, footer_style, attributes) %}
+  {% import _self as menus %}
+  {% if items %}
+
+    {% if menu_level == 0  %}
+      <nav class="usa-footer__nav">
+    {% endif %}
+
+    <ul class="add-list-reset grid-row grid-gap">
+
+    {% for item in items %}
+      {% if item.url.getOption('attributes') %}
+        {% set link_attributes = create_attribute(item.url.getOption('attributes')) %}
+      {% else %}
+        {% set link_attributes = create_attribute() %}
+      {% endif %}
+
+      <li class="usa-footer__primary-content">
+        <a {{ link_attributes.addClass('usa-footer__primary-link') }} href="{{ item.url }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+
+    </ul>
+
+    {% if menu_level == 0  %}
+      </nav>
+    {% endif %}
+
+  {% endif %}
+{% endmacro %}
+

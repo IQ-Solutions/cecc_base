@@ -1,0 +1,46 @@
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+
+header {
+  .header-wrapper {
+    flex-direction: column;
+    @include at-media('desktop') {
+      flex-direction: row;
+    }
+  }
+  &.usa-header--extended {
+    .usa-navbar {
+      padding: 0 0 1rem !important;
+      margin: 0 !important;
+      height: auto;
+      border-bottom: 3px solid $color-brand-secondary;
+      @include at-media(desktop) {
+      border-bottom: none;
+      }
+    }
+
+    .region-header {
+      .usa-logo {
+        margin: 0 0 0 0.7rem;
+        padding-right: 1rem;
+        max-width: 100%;
+
+        .logo-img {
+          display: inline-block;
+          border-bottom: none;
+
+          &:hover {
+            text-decoration: none;
+            border-bottom: none;
+          }
+
+          img {
+            max-width: 300px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

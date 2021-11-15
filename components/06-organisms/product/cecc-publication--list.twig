@@ -1,0 +1,73 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+ #}
+{% if search %}
+<li class="usa-collection__item border-bottom-2 padding-y-4">
+{% endif %}
+
+{% if image %}
+<div class="usa-collection__img">
+  <a href="{{ product_url }}">{{ image }}</a>
+</div>
+{% endif %}
+
+<div class="usa-collection__body">
+  <h2 class="usa-collection__heading margin-bottom-1 font-body-lg">{{ title }}</h2>
+
+  {% if date %}
+  <div class="usa-collection__meta">
+    <div class="usa-collection__meta-item">
+      {{ 'Publication Date'|t }}:&nbsp;{{ date }}
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="usa-collection__description">
+    {{ description }}
+  </div>
+
+  {% if downloadable or download_only %}
+  <div class="grid-row flex-justify padding-top-2">
+    {% if downloadable %}
+      <a target="_blank" href="{{ download_url }}" class="text-bold padding-y-05">
+        <svg class="usa-icon color-secondary" aria-hidden="true" focusable="false" role="img">
+          <use xlink:href="/{{ directory }}/assets/img/sprite.svg#file_download"></use>
+        </svg>
+        {{ 'Download PDF'|t }} ({{ file_size }})
+      </a>
+    {% endif %}
+
+    {% if 'Off' in download_only %}
+      <a href="{{ product_url }}" class="text-bold padding-y-05">
+        <svg class="usa-icon color-secondary" aria-hidden="true" focusable="false" role="img">
+          <use xlink:href="/{{ directory }}/assets/img/sprite.svg#local_grocery_store"></use>
+        </svg>
+        {{ 'Order Publication'|t }}
+      </a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+</div> {# /close .usa-collection__body #}
+
+{% if search %}
+</li>
+{% endif %}

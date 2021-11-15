@@ -1,0 +1,20 @@
+.health-topics-sidebar {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+// Show a shorter health topics menu on mobile.
+.block-system-menu-blockhealth-topics-mobile- {
+  display: block;
+  @include at-media(desktop) {
+    display: none;
+  }
+}
+
+// Show a longer health topics menu on dekstop.
+.block-views-blockhealth-topics-list-block-1 {
+  display: none;
+  @include at-media(desktop) {
+    display: block;
+  }
+}

@@ -1,0 +1,19 @@
+{{ form }}
+
+{% if search_title %}
+  <h2 class="text-capitalize">{{ search_title }}</h2>
+{% endif %}
+
+{% if no_of_results %}
+  <p>{{ no_of_results }}</p>
+{% endif %}
+
+{{ no_results_found }}
+
+{{ search_help }}
+
+<ul class="add-list-reset usa-collection">
+  {{ results }}
+</ul>
+
+{{ pager }}

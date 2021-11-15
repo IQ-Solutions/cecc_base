@@ -1,0 +1,22 @@
+/*------------------------------------*\
+    #BANNER STYLES
+\*------------------------------------*/
+
+.usa-banner {
+  background-color: color($theme-color-base-lighter);
+
+  &__inner {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__button {
+    color: color($theme-link-color);
+
+    &:hover {
+      color: color($theme-link-hover-color);
+    }
+  }
+}

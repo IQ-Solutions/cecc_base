@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+.usa-header + .usa-section,
+.usa-header + main {
+  border-top: none;
+  padding-top: 2rem;
+}
+
+.usa-layout-docs {
+  &__main {
+    order: 0;
+    @include at-media(desktop) {
+      order: 2;
+    }
+  }
+
+  &__sidebar {
+    order: 2;
+    @include at-media(desktop) {
+      order: 0;
+    }
+  }
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+

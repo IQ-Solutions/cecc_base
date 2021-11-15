@@ -1,0 +1,171 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes.addClass('publication-full') }}>
+
+  <div class="display-flex flex-justify padding-bottom-2">
+    {# Add to favorites. #}
+    {% if user.hasPermission('flag favorites') %}
+      {{- product.flag_favorites }}
+    {% else %}
+      {# If the user doesn't have permissions direct them to login. #}
+      <div class="flag flag-favorites">
+        <a title="Add to Favorites" href="{{ path('user.login', {}, {'query': {'destination': path('<current>') }}) }}" class="text-bold font-body-xs" rel="nofollow">
+          {{ "Add to Favorites"|t }}
+          <svg class="usa-icon color-secondary" aria-hidden="true" focusable="false" role="img">
+            <use xlink:href="/{{ directory }}/assets/img/sprite.svg#favorite_border"></use>
+          </svg>
+        </a>
+      </div>
+    {% endif %}
+
+    {# Alternate language link/link text. #}
+    <span class="text-bold">{{- product.field_alternate_language_link }}</span>
+  </div>
+
+  <div class="grid-row grid-gap">
+    <div class="tablet:grid-col-4">
+      {# Image. #}
+      {% if product.field_cecc_cover.0 %}
+      {{- product.field_cecc_cover }}
+      {% endif %}
+
+      {# Downloadable button. #}
+      {% if product.field_cecc_downloadable_media.0 %}
+      <a target="_blank" href="{{ product.field_cecc_downloadable_media.0['#product_url'] }}" class="usa-button usa-button--secondary margin-x-0 margin-top-2 padding-x-0 width-full">
+        <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+          <use xlink:href="/{{ directory }}/assets/img/sprite.svg#file_download"></use>
+        </svg>
+        &nbsp;{{ 'Download PDF'|t }} ({{ product.field_cecc_downloadable_media.0['#file_size'] }})
+        </a>
+      {% endif %}
+      {# If Download Only is selected don't show Order box  #}
+      {% if 'Off' in product.field_download_only.0 %}
+      {{- product.variations }}
+      {% endif %}
+
+    </div> {# /end first col #}
+
+
+    <div class="grid-col-fill">
+      {{- product.body }}
+
+      {% if product.field_cecc_alternate_language_de.0 %}
+				<div class="margin-bottom-3">
+          {{- product.field_cecc_alternate_language_de }}
+        </div>
+      {% endif %}
+
+      {% if product.field_additional_resources.0 %}
+				<div class="margin-bottom-3">
+					<h2 class="text-ink font-body-sm margin-top-0">{{ 'Additional Resources'|t }}</h2>
+						{{- product.field_additional_resources }}
+				</div>
+			{% endif %}
+
+      <ul class="usa-collection__meta" aria-label="More information">
+        <li class="usa-collection__meta-item">
+          <span class="text-bold margin-right-05">{{ 'Pub ID'|t }}:</span>&nbsp;{{- product.variation_sku.0['#text'] }}
+        </li>
+
+        <li class="usa-collection__meta-item">
+          <span class="text-bold margin-right-05">{{ 'Publication Date'|t }}:</span>&nbsp;{{- product.field_cecc_publication_date.0 }}
+        </li>
+
+        {% if product.field_cecc_number_of_pages.0 %}
+        <li class="usa-collection__meta-item">
+          <span class="text-bold margin-right-05">{{ 'Number of Pages'|t }}:</span>&nbsp;{{- product.field_cecc_number_of_pages.0 }}
+        </li>
+        {% endif %}
+
+        {% if product.field_cecc_audience.0 %}
+        <li class="usa-collection__meta-item">
+          <span class="text-bold margin-right-05">{{ 'Audience'|t }}:</span>&nbsp;{{- product.field_cecc_audience.0 }}
+        </li>
+        {% endif %}
+
+        {% if product.field_cecc_campaign.0 %}
+        <li class="usa-collection__meta-item">
+          <span class="text-bold margin-right-05">{{ 'Campaign'|t }}:</span>&nbsp;{{- product.field_cecc_campaign.0 }}
+        </li>
+        {% endif %}
+
+        {% if product.field_cecc_format.0 %}
+        <li class="usa-collection__meta-item">
+          <span class="text-bold margin-right-05">{{ 'Format'|t }}:</span>&nbsp;{{- product.field_cecc_format.0 }}
+        </li>
+        {% endif %}
+
+        {% if product.field_cecc_series.0 %}
+        <li class="usa-collection__meta-item">
+          <span class="text-bold margin-right-05">{{ 'Series'|t }}:</span>&nbsp;{{- product.field_cecc_series.0 }}
+        </li>
+        {% endif %}
+
+        {% if product.field_topic.0 %}
+        <li class="usa-collection__meta-item">
+          <span class="text-bold margin-right-05">{{ 'Topics'|t }}:</span>&nbsp;{{- product.field_topic }}
+        </li>
+        {% endif %}
+      </ul>
+    </div> {# /end second col #}
+  </div> {# /end grid row #}
+
+  {% if 'On' in product.variation_field_cecc_different_physical_ve.0 %}
+  <div class="grid-row grid-gap grid-col-12">
+    <div class="usa-alert usa-alert--warning">
+      <div class="usa-alert__body">
+        <h2 class="usa-alert__heading">{{ 'Notice'|t }}</h2>
+        <p class="usa-alert__text">
+          {{ 'This order will be fulfilled with an older version of this publication.'|t }}
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {# Show About Quantity limits if the Publication is orderable #}
+  {% if 'Off' in product.field_download_only.0 %}
+    {{ drupal_entity('block', 'aboutquantitylimits', check_access=false) }}
+  {% endif %}
+
+  {% if product.field_cecc_related_publication.0 %}
+		<div class="grid-col-12">
+      <h2>{{ 'Related Publications'|t }}</h2>
+      {{- product.field_cecc_related_publication }}
+		</div>
+	{% endif %}
+
+
+  {# Browse all publications link block. #}
+  <div class="margin-y-4">
+    {{ drupal_entity('block', 'browseallpublicationsbutton', check_access=false) }}
+  </div>
+
+  {#
+    Get help ordering block.
+    This syntax makes sure to include title of block along with content.
+  #}
+  <div class="margin-y-4">
+    {{ drupal_entity('block', 'gethelporderingpublications', check_access=false) }}
+  </div>
+
+</article>

@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #FONTS
+\*------------------------------------*/
+
+$primary-font: 'Source Sans Pro', sans-serif; // @todo ensure all regions on the page have uniform font settings
+$secondary-font: 'Arial', sans-serif; // @todo add EB Garamond as secondary?
+
+$smallest-font-size: 0.75em; // 12px
+$smaller-font-size: 0.875em; // 14px
+$small-font-size: .937em; // 15px
+$base-font-size: 1em; // 16px (body)
+$large-font-size: 1.125em; // 18px
+$larger-font-size: 1.25em; // 20px
+$largest-font-size: 1.5em; // 24px
+$jumbo-font-size: 1.85em; // 30px (front page banners/block titles)
+
+$thin: 100;
+$light: 300;
+$normal: 400;
+$bold: 600; // h1, h2
+$bolder: 700;

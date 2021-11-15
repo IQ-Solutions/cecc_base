@@ -1,0 +1,60 @@
+a,
+.usa-form a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s ease-in-out;
+  &:hover {
+    text-decoration: none;
+    border-bottom: 1px solid $link-blue;
+  }
+  &:visited {
+    color: $color-brand-secondary;
+    &:hover {
+      border-bottom: 1px solid $color-brand-secondary;
+    }
+  }
+}
+
+a[href$=jpg], a[href$=jpeg], a[href$=png], a[href$=gif] {
+	text-decoration: none;
+	border: none;
+  &:hover {
+    border: none;
+    text-decoration: none;
+  }
+}
+
+a {
+  &.usa-button {
+    text-decoration: none;
+  }
+  &.usa-button--outline {
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+// Pagination.
+.usa-pagination__list {
+  flex-flow: row wrap;
+}
+
+// Make sure admin toolbar doesn't inherit.
+.toolbar a {
+  border-bottom: 0;
+  &:hover {
+    border-bottom: 0;
+  }
+  &:visited {
+    color: initial;
+  }
+}
+
+// Social share links.
+.social-share-email {
+  svg {
+    height: 1.8em;
+    width: 1.8em;
+  }
+}

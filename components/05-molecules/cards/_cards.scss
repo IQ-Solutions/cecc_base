@@ -1,0 +1,46 @@
+// This is the sidebar card with the blue border on top & box shadow.
+.card-block {
+  border: 1px solid $gray-lighter;
+  border-top: 8px solid $accent-blue-darkest;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px $gray-light;
+
+  p {
+    margin-top: 0.3rem;
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  // This is the sidebar card that has a bg img and blue text box at
+  // bottom.
+  &--callout {
+    max-width: 100%;
+
+    @include at-media(tablet) {
+      max-width: 25%;
+    }
+
+    @include at-media(desktop) {
+      max-width: 100%;
+    }
+
+    &--image {
+      img {
+        width: 100%;
+      }
+    }
+    &--text {
+      background-color: rgba(35, 120, 195, 0.9);
+      a {
+        color: $white;
+        &:hover {
+          border-bottom-color: white;
+        }
+      }
+    }
+  }
+}

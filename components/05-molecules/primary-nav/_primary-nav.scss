@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    #PRIMARY NAVIGATION
+\*------------------------------------*/
+
+.usa-nav {
+  border-top: none;
+  background-color: $accent-blue-darkest;
+  @include at-media(desktop) {
+    background-color: $white;
+  }
+
+  &__inner {
+    background-color: color($theme-color-primary);
+    border-bottom: 6px solid color($theme-color-secondary);
+
+    @include at-media('tablet') {
+      width: 100%;
+      max-width: 100% !important;
+    }
+  }
+
+  &__close { // @todo need to change icon to close-white.svg...where is template/code?
+    img {
+      width: 1.1rem;
+    }
+  }
+
+  &__primary {
+    justify-content: center;
+    margin-left: 0 !important;
+    a {
+      border-bottom: none;
+      &:hover {
+        border-bottom: none;
+      }
+    }
+
+    &-item {
+      a {
+        &:link, &:hover, &:visited {
+          color: color($theme-link-reverse-color) !important;
+        }
+
+        &:hover, &:hover::after {
+          background-color: color($theme-color-secondary) !important;
+        }
+
+        &.usa-nav__link {
+          span {
+            font-family: $primary-font;
+            font-size: $large-font-size;
+          }
+
+          &.usa-current,
+          &.usa-current:target,
+          &.usa-current:after,
+          &.usa-current:hover,
+          &.usa-current:hover::after {
+            background-color: color($theme-color-accent-cool) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.usa-menu-btn {
+  cursor: pointer;
+  &__content {
+    display: flex;
+    align-items: center;
+    svg {
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.3rem;
+    }
+  }
+
+}

@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Default theme implementation for flag links.
+ *
+ * Available functions:
+ * - flagcount(flag, flaggable) gets the number of flaggings for the given flag and flaggable.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the link element.
+ * - title: The flag link title.
+ * - action: 'flag' or 'unflag'
+ * - flag: The flag object.
+ * - flaggable: The flaggable entity.
+ */
+#}
+{% spaceless %}
+{# Attach the flag CSS library.#}
+{{ attach_library('flag/flag.link') }}
+
+{# Depending on the flag action, set the appropriate action class. #}
+{% if action == 'unflag' %}
+    {% set action_class = 'action-unflag' %}
+{% else %}
+    {% set action_class = 'action-flag' %}
+{% endif %}
+
+{# Set the remaining Flag CSS classes. #}
+{%
+  set classes = [
+    'flag',
+    'flag-' ~ flag.id()|clean_class,
+    'js-flag-' ~ flag.id()|clean_class ~ '-' ~ flaggable.id(),
+    action_class,
+    'padding-y-2'
+  ]
+%}
+
+{# Set nofollow to prevent search bots from crawling anonymous flag links #}
+{% set attributes = attributes.setAttribute('rel', 'nofollow') %}
+
+<div class="{{classes|join(' ')}}">
+  <a{{ attributes.addClass('text-bold font-body-xs') }}>
+    {{ title }}
+    {% if action == 'unflag' %}
+    <svg class="usa-icon color-secondary" aria-hidden="true" focusable="false" role="img">
+      <use xlink:href="/{{ directory }}/assets/img/sprite.svg#favorite"></use>
+    </svg>
+    {% else %}
+    <svg class="usa-icon color-secondary" aria-hidden="true" focusable="false" role="img">
+      <use xlink:href="/{{ directory }}/assets/img/sprite.svg#favorite_border"></use>
+    </svg>
+    {% endif %}
+  </a>
+</div>
+{% endspaceless %}

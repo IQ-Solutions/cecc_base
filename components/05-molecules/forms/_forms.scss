@@ -1,0 +1,53 @@
+.usa-form {
+  @media(min-width: 30em) {
+    max-width: none;
+  }
+}
+
+#edit-submit-publication-search {
+  margin-bottom: units(3);
+}
+
+#block-searchapipagesearchblockform {
+  .usa-search > form {
+    display: flex;
+
+    button,
+    input {
+      margin-top: 1px;
+    }
+  }
+
+  @media(min-width: 30em) {
+    .form-search {
+      min-width: 13em;
+    }
+  }
+}
+
+#block-cecc-theme-content {
+  form.search-api-page-block-form-site-search {
+    display: flex;
+
+    button {
+      height: 1.9em;
+      width: 2em;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      margin-right: -3px;
+      margin-top: 1.5rem;
+    }
+
+    .usa-search--small [type="submit"] {
+      background-image: url("../img/usa-icons-bg/search--white.svg"), linear-gradient(transparent, transparent);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 1.5rem;
+    }
+
+    input.form-search {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}

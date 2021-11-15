@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Template for orders in the 'user' view mode.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - order: The rendered order fields.
+ *   Use 'order' to print them all, or print a subset such as
+ *   'order.order_number'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ order|without('order_number') }}
+ *   @endcode
+ * - order_entity: The order entity.
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes }}>
+  <div class="text-right">
+    <a class="usa-button usa-button--outline-secondary" href="{{ url('commerce_repeat_order.repeat_order', { 'commerce_order': order_entity.id }) }}">
+      {{ "Reorder"|t }}
+      <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+        <use xlink:href="/{{ directory }}/assets/img/sprite.svg#autorenew"></use>
+      </svg>
+    </a>
+  </div>
+  <div>{{ order.placed }}</div>
+  <div>{{ order.completed }}</div>
+  <div>{{ order.mail }}</div>
+  <div>{{ additional_order_fields }}</div>
+
+  <div>
+    {{ order.order_items }}
+  </div>
+
+  <div class="customer-information">
+    {% if order.shipping_information %}
+      <div class="customer-information__shipping">
+        <h2>{{ 'Shipping Information'|t }}</h2>
+        {{ order.shipping_information }}
+      </div>
+    {% endif %}
+
+    {% if order.billing_information %}
+      <div class="customer-billing">
+        <h2 class="margin-top-5">{{ 'Billing Information'|t }}</h2>
+        {{ order.billing_information }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="text-right">
+    <a class="usa-button usa-button--outline-secondary" href="{{ url('commerce_repeat_order.repeat_order', { 'commerce_order': order_entity.id }) }}">
+      {{ "Reorder"|t }}
+      <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+        <use xlink:href="/{{ directory }}/assets/img/sprite.svg#autorenew"></use>
+      </svg>
+    </a>
+  </div>
+
+</div>

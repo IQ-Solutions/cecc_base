@@ -1,0 +1,9 @@
+assets:
+  version: VERSION
+  css:
+    theme:
+      /libraries/fortawesome--fontawesome-free/css/all.min.css: { minified: true }
+      assets/css/uswds.min.css: { minified: true }
+  js:
+    /libraries/fortawesome--fontawesome-free/js/all.js: { minified: true }
+    assets/js/uswds.min.js: { minified: true }

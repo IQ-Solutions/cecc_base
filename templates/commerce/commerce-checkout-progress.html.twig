@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the checkout progress.
+ *
+ * Available variables:
+ * - steps: An array of steps, where each step has the following keys:
+ *   - id: The step ID.
+ *   - label: The step label.
+ *   - position: 'previous', 'current' or 'next'.
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="usa-step-indicator usa-step-indicator--counters-sm" aria-label="progress">
+	<ol class="usa-step-indicator__segments">
+		{% for step in steps %}
+			{% if step.position == 'previous' %}
+				<li class="usa-step-indicator__segment usa-step-indicator__segment--complete">
+					<span class="usa-step-indicator__segment-label">{{ step.label }}
+						<span class="usa-sr-only">{{ 'complete'|t }}</span>
+					</span>
+				</li>
+			{% elseif step.position == 'current' %}
+				<li class="usa-step-indicator__segment usa-step-indicator__segment--current" aria-current="true">
+					<span class="usa-step-indicator__segment-label">{{ step.label }}</span>
+				</li>
+			{% else %}
+				<li class="usa-step-indicator__segment">
+					<span class="usa-step-indicator__segment-label">{{ step.label }}
+						<span class="usa-sr-only">{{ 'not completed'|t }}</span>
+					</span>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ol>
+</div>

@@ -1,0 +1,173 @@
+// Form on the cart page.
+.cart-form {
+
+  // Quantity.
+  .usa-label {
+    margin: 0;
+    padding: 0;
+    input {
+      margin: 0;
+    }
+  }
+
+  // Remove.
+  .remove__button {
+    margin-top: 0;
+  }
+
+  // Buttons/link at bottom.
+  .form-actions {
+    display: flex;
+    padding: 3rem 0 0;
+    align-items: center;
+    flex-direction: column;
+    @include at-media(tablet) {
+      flex-direction: row;
+    }
+
+    button {
+      margin: 1rem 0 0;
+      width: 100%;
+
+      @include at-media(tablet) {
+        width: auto;
+        margin: 0;
+      }
+    }
+
+    .update-cart__button {
+      margin-left: auto;
+      margin-right: 0.5rem;
+    }
+    // Continue Shopping link.
+    // TODO: This should be have the svg code inside anchor.
+    // Update template.
+    a {
+      height: fit-content;
+      color: $color-brand-secondary;
+      box-shadow: inset 0 0 0 2px $color-brand-secondary;
+      background-color: white;
+      text-decoration: none;
+      margin: 0;
+      line-height: 1.2;
+      width: 100%;
+
+      @include at-media(tablet) {
+        width: auto;
+      }
+
+      &:visited {
+        color: $color-brand-secondary;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $color-brand-secondary;
+        color: color($theme-text-reverse-color);
+        box-shadow: inset 0 0 0 2px $color-brand-secondary;
+      }
+    }
+  }
+}
+
+// Step indicator during checkout process.
+.usa-step-indicator__segment {
+  max-width: 100%;
+}
+
+// Left column on checkout screen.
+.checkout--main {
+  .address {
+    margin: 0;
+  }
+
+  .usa-legend {
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  .usa-fieldset {
+    margin-top: 2rem;
+  }
+
+    // Additional Information.
+  .usa-label {
+    .control-label {
+      font-weight: 600;
+    }
+  }
+}
+
+.checkout--sidebar {
+  border-left: 0;
+
+  @include at-media(tablet) {
+    border-left: 1px solid $gray-light;
+  }
+
+  // Total $
+  .order-total-line-value {
+    width: auto;
+    padding: 0 0.9rem;
+  }
+}
+
+// Buttons in footer at bottom of checkout page.
+.layout-region-checkout-footer {
+  width: 100%;
+}
+
+// Form on the checkout page.
+.commerce-checkout-flow {
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0 0;
+    align-items: center;
+    width: 100%;
+
+    @include at-media(tablet) {
+      flex-direction: row;
+    }
+
+    // Complete checkout 'button'.
+    input {
+      margin: 1rem 0;
+      width: 100%;
+
+      @include at-media(tablet) {
+        width: auto;
+        margin: 0 1rem;
+      }
+    }
+    // Back to cart link and Go Back link.
+    a {
+      &.usa-button {
+        color: $color-brand-secondary;
+        box-shadow: inset 0 0 0 2px $color-brand-secondary;
+        background-color: white;
+        text-decoration: none;
+        margin: 0;
+        width: 100%;
+
+        @include at-media(tablet) {
+          width: auto;
+        }
+
+        &:visited {
+          color: $color-brand-secondary;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: $color-brand-secondary;
+          color: color($theme-text-reverse-color);
+          box-shadow: inset 0 0 0 2px $color-brand-secondary;
+        }
+      }
+    }
+  }
+}

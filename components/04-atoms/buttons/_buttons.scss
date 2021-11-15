@@ -1,0 +1,41 @@
+.usa-button--close {
+  div.flag {
+    display: inline;
+  }
+}
+
+// Need a class that makes purple outline buttons.
+.usa-button--outline-secondary {
+  color: $color-brand-secondary;
+  box-shadow: inset 0 0 0 2px $color-brand-secondary;
+  background-color: white;
+
+  &:visited,
+  a {
+    color: $color-brand-secondary;
+  }
+
+  &:hover,
+  &.usa-button--hover,
+  &:active,
+  &.usa-button--active,
+  &:focus,
+  &.usa-focus {
+    background-color: $color-brand-secondary;
+    color: color($theme-text-reverse-color);
+    box-shadow: inset 0 0 0 2px $color-brand-secondary;
+
+    a {
+      color: color($theme-text-reverse-color);
+    }
+  }
+}
+
+// Why no hover state, USWDS?
+.usa-button--outline {
+  &:hover {
+    background-color: $color-brand-primary;
+    color: color($theme-text-reverse-color);
+    box-shadow: inset 0 0 0 2px $color-brand-primary;
+  }
+}

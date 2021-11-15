@@ -1,0 +1,83 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+{% if title %}
+  <h2 class="color-secondary">{{ title }}</h2>
+{% endif %}
+
+{% for key,row in rows %}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row',
+      'grid-row',
+      'padding-y-5',
+      'border-bottom-2',
+      'flex-align-start',
+      'cart-form'
+    ]
+  %}
+
+  {%
+    set rowQuantity = row.content['#row']._entity.order_items[key].entity.quantity.value
+  %}
+
+  {%
+    set overLimitValue = row.content['#row']._entity.order_items[key].entity.purchased_entity.entity.field_cecc_order_limit.value
+  %}
+
+  {%
+    set overLimit = rowQuantity > overLimitValue
+  %}
+
+  {%
+    set diffVersion = row.content['#row']._entity.order_items[key].entity.purchased_entity.entity.field_cecc_different_physical_ve.value
+  %}
+
+  <div{{ row.attributes.addClass(row_classes) }}>
+    <div class="tablet:grid-col-6">
+      {{ view.style_plugin.getField(key, 'purchased_entity') }}
+    </div>
+
+    <div class="tablet:grid-col-3 display-flex flex-column flex-align-center">
+      <div class="width-10">{{ view.style_plugin.getField(key, 'edit_quantity') }}</div>
+
+      {% if overLimit %}
+      <div class="usa-alert usa-alert--warning usa-alert--no-icon usa-alert--slim">
+        <div class="usa-alert__body">
+          <p class="usa-alert__text">
+            {{ 'Over Limit.'|t }}
+          </p>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if diffVersion %}
+      <div class="usa-alert usa-alert--warning usa-alert--no-icon usa-alert--slim">
+        <div class="usa-alert__body">
+          <p class="usa-alert__text">
+            {{ 'This order will be fulfilled with an older version of this publication.'|t }}
+          </p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="tablet:grid-col-3 display-flex flex-justify-center">
+      {{ view.style_plugin.getField(key, 'remove_button') }}
+    </div>
+  </div>
+{% endfor %}

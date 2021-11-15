@@ -1,0 +1,70 @@
+/*------------------------------------*\
+    #HELPER CLASSES
+\*------------------------------------*/
+
+/* icons included in USWDS theme */
+.usa-icons--search {
+  background-image: url(../img/usa-icons-bg/search--white.svg),linear-gradient(transparent,transparent);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1.75rem;
+  width: 3rem;
+}
+
+.border-bottom {
+  color: color($theme-color-base-light);
+}
+
+.border-bottom-2 {
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.border-bottom-3 {
+  border-bottom: 2px solid $gray-lightest;
+}
+
+.featured-box {
+  background-color: $gray-lightest;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+// Lighter purple.
+.color-secondary {
+  color: $color-brand-secondary;
+}
+
+.color-blue-dark {
+  color: $accent-blue-dark;
+}
+
+// Visually hide and hide from screen readers.
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.usa-collection {
+  &__item {
+    border-top-style: none;
+  }
+  &__meta-item {
+    margin: 0;
+  }
+}
+
+.all-caps {
+  text-transform: uppercase;
+}
+
+// Recaptcha.
+.g-recaptcha {
+  margin-top: 2rem;
+}
+
+// Webform confirmation message.
+.webform-confirmation__message {
+  line-height: 1.5;
+}

@@ -1,0 +1,35 @@
+.usa-alert {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+// Site-wide alerts (e.g. COVID banner).
+.usa-site-alert {
+  .usa-alert {
+    margin-bottom: 0;
+  }
+}
+
+.usa-site-alert--emergency {
+  background-color: color('red-cool-60v');
+  .usa-link {
+    color: $white;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      text-decoration: none;
+      border-bottom: 1px solid white;
+    }
+  }
+
+  .usa-alert {
+    background-color: color('red-cool-60v');
+    border-left-color: color('red-cool-60v');
+  }
+
+  .usa-alert__text {
+    p {
+      margin: 0;
+    }
+  }
+}

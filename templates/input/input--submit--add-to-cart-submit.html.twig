@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{% spaceless %}
+  {% if input_group %}
+    <div class="input-group usa-form-group">
+  {% endif %}
+
+  {% if prefix %}
+    {{ prefix }}
+  {% endif %}
+
+  {% block input %}
+  {% if attributes.disabled %}
+    <div class="text-center text-bold padding-y-3">
+      {{'Out of Stock'|t}}
+    </div>
+  {% else %}
+    <button{{ attributes.addClass('usa-button usa-button--outline margin-bottom-4 width-full') }}>
+    Add to Cart&nbsp;
+      <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+        <use xlink:href="/{{ directory }}/assets/img/sprite.svg#local_grocery_store"></use>
+      </svg>
+    </button>
+  {% endif %}
+
+  {% endblock %}
+
+  {% if suffix %}
+    {{ suffix }}
+  {% endif %}
+
+  {% if input_group %}
+    </div>
+  {% endif %}
+
+  {{ children }}
+{% endspaceless %}

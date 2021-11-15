@@ -1,0 +1,54 @@
+// Profile/address book pages.
+.address-book__container {
+
+  .address-book__add-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    &::after {
+      content: url("../img/usa-icons/add_circle_outline.svg");
+      padding-left: 0.2rem;
+      padding-top: 0.3rem;
+    }
+  }
+
+  .address-book__profiles {
+    flex-flow: column nowrap;
+    @include at-media(desktop) {
+      flex-flow: row wrap;
+    }
+    .address-book__profile {
+      padding: 1rem;
+     flex: 1 1 47%;
+    }
+
+    .address-book__profile--default {
+      background-color: $gray-lightest;
+    }
+  }
+
+  .address-book__operations {
+    a {
+      border-bottom: 1px solid transparent;
+      margin-right: 0;
+    }
+
+    .address-book__delete-link {
+      &::before {
+        content: '|';
+        display: inline-block;
+        padding: 0 1rem;
+      }
+    }
+
+    .address-book__set-default-link {
+      display: inline-block;
+      &::before {
+        content: '|';
+        display: inline-block;
+        padding: 0 1rem;
+      }
+    }
+  }
+}

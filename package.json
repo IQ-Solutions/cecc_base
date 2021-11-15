@@ -1,0 +1,23 @@
+{
+  "name": "cecc_theme",
+  "version": "1.0.0",
+  "description": "This sub-theme requires compiling of the USWDS CSS and also the assets folder for javascript.",
+  "main": "index.js",
+  "scripts": {
+    "prebuild:css": "node-sass sass/styles.scss assets/css/uswds.css",
+    "build:css": "postcss --use autoprefixer -b 'last 2 versions' < assets/css/uswds.css | postcss --use cssnano --map -o assets/css/uswds.min.css",
+    "build": "npm run build:css",
+    "build:watch": "watch 'npm run build' sass components"
+  },
+  "author": "William Hurley",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "cssnano": "^5.0.6",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1",
+    "uswds": "^2.12.1",
+    "watch": "^1.0.2"
+  }
+}

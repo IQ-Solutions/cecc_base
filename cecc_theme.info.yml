@@ -1,0 +1,36 @@
+type: theme
+base theme: uswds_base
+
+name: 'CECC Theme'
+description: 'Default theme for IQSolutions CECC'
+package: 'CECC Theme'
+core: 8.x
+core_version_requirement: ^8 || ^9
+logo: 'logo.png'
+screenshot: 'screenshot.png'
+
+regions:
+  header_top: 'Above Header'
+  header: 'Header'
+  primary_menu: 'Primary Menu'
+  secondary_menu: 'Secondary Menu'
+  breadcrumb: 'Breadcrumb'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  sidebar_first: 'First sidebar'
+  page_title: 'Page Title'
+  content: 'Content'
+  sidebar_second: 'Second sidebar'
+  footer_menu: 'Footer Menu'
+  footer: 'Primary Footer'
+  footer_secondary: 'Secondary Footer'
+
+libraries:
+  - 'cecc_theme/assets'
+
+components:
+  namespaces:
+    atoms: components/04-atoms
+    molecules: components/05-molecules
+    organisms: components/06-organisms
+    pages: components/07-pages

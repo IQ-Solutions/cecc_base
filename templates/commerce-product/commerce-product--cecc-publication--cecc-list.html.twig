@@ -1,0 +1,11 @@
+{% include "@organisms/product/cecc-publication--list.twig" with {
+  "image": product.field_cecc_cover.0,
+  "description": product.body,
+  "title": product.title,
+  "date": product.field_cecc_publication_date.0,
+  "downloadable": product.field_cecc_downloadable_media.0,
+  "download_url": product.field_cecc_downloadable_media.0['#product_url'],
+  "file_size": product.field_cecc_downloadable_media.0['#file_size'],
+  "download_only": product.field_download_only.0,
+  "stock": product.variation_field_cecc_stock.0|render|striptags|trim
+}%}

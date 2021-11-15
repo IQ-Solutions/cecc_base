@@ -1,0 +1,6 @@
+<a class="usa-button usa-button--secondary" href="{{ cart_url }}">
+  <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+    <use xlink:href="/{{ directory }}/assets/img/sprite.svg#local_grocery_store"></use>
+  </svg>&nbsp;View Cart
+  {% if item_count > 0 %}({{ item_count }}){% endif %}
+</a>

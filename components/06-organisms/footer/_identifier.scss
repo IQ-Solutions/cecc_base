@@ -1,0 +1,52 @@
+.usa-identifier {
+  background-color: $accent-blue-darkest;
+
+  .usa-identifier__identity-domain,
+  .usa-identifier__identity-disclaimer {
+    a {
+      @include u-text('gray-10');
+      &:hover {
+        border-bottom-color: $gray-lightest;
+      }
+      &:visited {
+        border-bottom-color: $gray-lightest;
+        @include u-text('gray-10');
+      }
+    }
+  }
+
+  .usa-identifier__section--usagov {
+    a {
+      text-decoration: none;
+      @include u-text('white');
+      &:hover {
+        border-bottom-color: $gray-lightest;
+      }
+      &:visited {
+        border-bottom-color: $gray-lightest;
+        @include u-text('white');
+      }
+    }
+  }
+
+  .usa-identifier__required-links-list {
+    display: flex;
+    flex-direction: column;
+    @include at-media('desktop') {
+      flex-direction: row;
+    }
+    .usa-identifier__required-links-item {
+      flex: 1 0 auto;
+      a {
+        @include u-text('gray-10');
+        &:hover {
+          border-bottom-color: $gray-lightest;
+        }
+        &:visited {
+          border-bottom-color: $gray-lightest;
+          @include u-text('gray-10');
+        }
+      }
+    }
+  }
+}
