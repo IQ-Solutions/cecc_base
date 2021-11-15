@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - cecc_cart
+    - system
+  theme:
+    - cecc_theme
+id: cartbutton
+theme: cecc_theme
+region: breadcrumb
+weight: -10
+provider: null
+plugin: cecc_commerce_cart_button
+settings:
+  id: cecc_commerce_cart_button
+  label: 'Cart Button'
+  provider: cecc_cart
+  label_display: '0'
+  item_count_type: total_items
+visibility:
+  request_path:
+    id: request_path
+    pages: "/cart\r\n/checkout/*"
+    negate: true

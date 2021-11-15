@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: card_block
+label: 'Card Block'
+revision: 0
+description: 'This custom block resembles a card. It is used in the sidebar. '

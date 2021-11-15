@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: alert_block
+label: 'Alert Block'
+revision: 0
+description: 'Use for site alerts, such as a COVID banner. '

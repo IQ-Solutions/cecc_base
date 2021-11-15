@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card_block_callout
+    - field.storage.block_content.field_label
+id: block_content.card_block_callout.field_label
+field_name: field_label
+entity_type: block_content
+bundle: card_block_callout
+label: Label
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

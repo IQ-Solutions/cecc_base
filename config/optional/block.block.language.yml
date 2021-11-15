@@ -1,0 +1,27 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - facets.facet.language
+  module:
+    - facets
+    - system
+  theme:
+    - cecc_theme
+id: language
+theme: cecc_theme
+region: sidebar_first
+weight: -12
+provider: null
+plugin: 'facet_block:language'
+settings:
+  id: 'facet_block:language'
+  label: Language
+  provider: facets
+  label_display: visible
+  block_id: language
+visibility:
+  request_path:
+    id: request_path
+    pages: '/taxonomy/term/*'
+    negate: false

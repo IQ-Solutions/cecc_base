@@ -1,0 +1,143 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cecc_base_theme_suggestions_input_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+
+  if (isset($element['#name']) && !empty($element['#name'])) {
+    $suggestions[] = 'input__' . $element['#type'] . '__' .
+    str_replace('-', '_', $element['#name']);
+  }
+
+  if (isset($element['#id']) && !empty($element['#id'])) {
+    $suggestions[] = 'input__' . $element['#type'] . '__' .
+    str_replace('-', '_', $element['#id']);
+  }
+
+  // If there's a twig suggestion set as an attribute,
+  // (see hook_form_alter), make a theme suggestion based on it.
+  if (isset($element['#attributes']['data-twig-suggestion'])) {
+    $suggestions[] = 'input__' . $element['#type'] . '__' . $element['#attributes']['data-twig-suggestion'];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cecc_base_theme_suggestions_fieldset_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+
+  if (isset($element['#name']) && !empty($element['#name'])) {
+    $suggestions[] = 'fieldset__' .
+    str_replace('-', '_', $element['#name']);
+  }
+
+  if (isset($element['#id']) && !empty($element['#id'])) {
+    $suggestions[] = 'fieldset__' .
+    str_replace('-', '_', $element['#id']);
+  }
+
+  // If there's a twig suggestion set as an attribute,
+  // (see hook_form_alter), make a theme suggestion based on it.
+  if (isset($element['#attributes']['data-twig-suggestion'])) {
+    $suggestions[] = 'fieldset__' . $element['#attributes']['data-twig-suggestion'];
+  }
+}
+
+/**
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ * This is to target the add to cart btn on the pub details page
+ * specifically. The other theme suggestions overlap with the search
+ * submit btn on the search page.
+ */
+function cecc_base_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $build_info = $form_state->getBuildInfo();
+
+  if (isset($build_info['base_form_id'])) {
+    switch($build_info['base_form_id']) {
+
+      // Form on pub detail pages.
+      case "commerce_order_item_add_to_cart_form":
+        $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'add_to_cart_submit';
+        $form['actions']['submit']['#attributes']['class'][] = 'add-to-cart__button';
+        break;
+
+      // Form on cart detail page.
+      case 'views_form_cecc_cart_form_default':
+        // 'Update cart' input attributes to create theme suggestions.
+        $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'update_cart_submit';
+        $form['actions']['submit']['#attributes']['class'][] = 'update-cart__button';
+
+        // 'Remove' input attributes to create theme suggestions.
+        foreach ($form['remove_button'] as $key => $button) {
+          if (is_numeric($key)) {
+            $form['remove_button'][$key]['#attributes']['class'][] = 'remove__button';
+            $form['remove_button'][$key]['#attributes']['data-twig-suggestion'] = 'remove__button';
+          }
+        }
+      break;
+
+      // Form used in header search
+      case "search_api_page_block_form":
+        $form['actions']['submit']['#attributes']['data-twig-suggestion'] = 'header_search_submit';
+        $form['actions']['submit']['#attributes']['class'][] = 'header_search__button';
+      break;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter()
+ * to allow for more theme suggestions for custom block types.
+ * https://www.drupal.org/forum/support/theme-development/2016-05-12/theming-custom-block-types
+ * @param array $suggestions
+ * @param array $variables
+ */
+function cecc_base_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+ /**
+ * Implements hook_theme_suggestions_taxonomy_term_alter().
+ */
+function cecc_base_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['elements']['#taxonomy_term'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  // Add view mode theme suggestions.
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
+
+/**
+ * Implements hook_preprocess_menu_local_tasks().
+ */
+function cecc_base_preprocess_menu_local_tasks(&$variables) {
+  if (!empty($variables['primary'])) {
+    foreach ($variables['primary'] as $menu_item_key => $menu_attributes) {
+      $variables['primary'][$menu_item_key]['#link']['localized_options']['attributes']['class'][] = 'usa-button--outline-secondary';
+      if (!empty($variables['primary'][$menu_item_key]['#active'])) {
+        $variables['primary'][$menu_item_key]['#link']['localized_options']['attributes']['class'][] = 'usa-button--active';
+      }
+    }
+  }
+  if (!empty($variables['secondary'])) {
+    foreach ($variables['secondary'] as $menu_item_key => $menu_attributes) {
+      $variables['secondary'][$menu_item_key]['#link']['localized_options']['attributes']['class'][] = 'usa-button';
+      $variables['secondary'][$menu_item_key]['#link']['localized_options']['attributes']['class'][] = 'usa-button--outline-secondary';
+      if (!empty($variables['secondary'][$menu_item_key]['#active'])) {
+        $variables['secondary'][$menu_item_key]['#link']['localized_options']['attributes']['class'][] = 'usa-button--active';
+      }
+    }
+  }
+}

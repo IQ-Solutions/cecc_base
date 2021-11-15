@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - uswds_base_subtheme
-id: uswds_base_subtheme_footer
-theme: uswds_base_subtheme
+    - cecc_theme
+id: cecc_theme_footer
+theme: cecc_theme
 region: footer_menu
 weight: 0
 provider: null
@@ -20,4 +20,5 @@ settings:
   label_display: '0'
   level: 1
   depth: 0
+  expand_all_items: false
 visibility: {  }

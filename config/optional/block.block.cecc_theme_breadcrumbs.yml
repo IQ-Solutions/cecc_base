@@ -4,11 +4,11 @@ dependencies:
   module:
     - system
   theme:
-    - uswds_base_subtheme
-id: uswds_base_subtheme_breadcrumbs
-theme: uswds_base_subtheme
+    - cecc_theme
+id: cecc_theme_breadcrumbs
+theme: cecc_theme
 region: breadcrumb
-weight: -100
+weight: -11
 provider: null
 plugin: system_breadcrumb_block
 settings:

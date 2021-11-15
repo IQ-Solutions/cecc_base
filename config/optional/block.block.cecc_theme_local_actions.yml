@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - uswds_base_subtheme
-id: uswds_base_subtheme_local_actions
-theme: uswds_base_subtheme
+    - cecc_theme
+id: cecc_theme_local_actions
+theme: cecc_theme
 region: content
-weight: 10
+weight: -15
 provider: null
 plugin: local_actions_block
 settings:

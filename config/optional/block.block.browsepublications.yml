@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.browse-publications
+  module:
+    - system
+  theme:
+    - cecc_theme
+id: browsepublications
+theme: cecc_theme
+region: sidebar_first
+weight: -17
+provider: null
+plugin: 'system_menu_block:browse-publications'
+settings:
+  id: 'system_menu_block:browse-publications'
+  label: 'Browse Publications'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    pages: "/checkout\r\n/checkout/*\r\n/cart\r\n/cart/*\r\n/user\r\n/user/*\r\n/search\r\n/search/*\r\n/profile\r\n/profile/*"
+    negate: true

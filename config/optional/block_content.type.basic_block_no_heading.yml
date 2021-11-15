@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: basic_block_no_heading
+label: 'Basic Block - No heading'
+revision: 0
+description: 'This block is like the basic block but will not display the heading/description, only the body.'

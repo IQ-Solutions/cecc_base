@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.alert_block
+    - field.field.block_content.alert_block.body
+    - field.field.block_content.alert_block.field_heading
+  module:
+    - text
+id: block_content.alert_block.default
+targetEntityType: block_content
+bundle: alert_block
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_checkout
+    - system
+  theme:
+    - cecc_theme
+id: checkoutprogress
+theme: cecc_theme
+region: content
+weight: -16
+provider: null
+plugin: commerce_checkout_progress
+settings:
+  id: commerce_checkout_progress
+  label: 'Checkout progress'
+  provider: commerce_checkout
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/checkout/*'
+    negate: false

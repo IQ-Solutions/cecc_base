@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - uswds_base_subtheme
-id: uswds_base_subtheme_branding
-theme: uswds_base_subtheme
+    - cecc_theme
+id: cecc_theme_branding
+theme: cecc_theme
 region: header
 weight: 0
 provider: null
@@ -17,6 +17,6 @@ settings:
   provider: system
   label_display: '0'
   use_site_logo: true
-  use_site_name: true
+  use_site_name: false
   use_site_slogan: false
 visibility: {  }

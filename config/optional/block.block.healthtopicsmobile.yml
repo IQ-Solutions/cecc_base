@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.health-topics-mobile-
+  module:
+    - system
+  theme:
+    - cecc_theme
+id: healthtopicsmobile
+theme: cecc_theme
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'system_menu_block:health-topics-mobile-'
+settings:
+  id: 'system_menu_block:health-topics-mobile-'
+  label: 'Health Topics'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    pages: "/checkout\r\n/checkout/*\r\n/cart\r\n/cart/*\r\n/user\r\n/user/*\r\n/search\r\n/search/*\r\n/profile\r\n/profile/*"
+    negate: true

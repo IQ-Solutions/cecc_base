@@ -6,11 +6,11 @@ dependencies:
   module:
     - system
   theme:
-    - uswds_base_subtheme
-id: uswds_base_subtheme_account_menu
-theme: uswds_base_subtheme
+    - cecc_theme
+id: cecc_theme_account_menu
+theme: cecc_theme
 region: secondary_menu
-weight: 0
+weight: -9
 provider: null
 plugin: 'system_menu_block:account'
 settings:
@@ -20,4 +20,5 @@ settings:
   label_display: '0'
   level: 1
   depth: 1
+  expand_all_items: false
 visibility: {  }

@@ -4,9 +4,9 @@ dependencies:
   module:
     - help
   theme:
-    - uswds_base_subtheme
-id: uswds_base_subtheme_help
-theme: uswds_base_subtheme
+    - cecc_theme
+id: cecc_theme_help
+theme: cecc_theme
 region: help
 weight: -30
 provider: null

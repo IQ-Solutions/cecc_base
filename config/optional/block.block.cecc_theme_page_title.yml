@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - uswds_base_subtheme
-id: uswds_base_subtheme_page_title
-theme: uswds_base_subtheme
-region: content
-weight: 0
+    - cecc_theme
+id: cecc_theme_page_title
+theme: cecc_theme
+region: page_title
+weight: -14
 provider: null
 plugin: page_title_block
 settings:

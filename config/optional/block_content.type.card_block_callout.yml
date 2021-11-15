@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: card_block_callout
+label: 'Card Block - Callout'
+revision: 0
+description: 'A card block that links to a specific page. It has a background image and a label/title'
