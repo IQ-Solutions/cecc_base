@@ -25,7 +25,7 @@ Relative image file path
 ----------------------------------------
 */
 
-$theme-image-path: "../img";
+$theme-image-path: "../img" !default;
 
 /*
 ----------------------------------------
@@ -38,8 +38,8 @@ Show updates and notifications.
 ----------------------------------------
 */
 
-$theme-show-compile-warnings: true;
-$theme-show-notifications: true;
+$theme-show-compile-warnings: true !default;
+$theme-show-notifications: true !default;
 
 /*
 ----------------------------------------
@@ -72,7 +72,7 @@ escaped.
 ----------------------------------------
 */
 
-$theme-prefix-separator: "\\:";
+$theme-prefix-separator: "\\:" !default;
 
 /*
 ----------------------------------------
@@ -83,7 +83,7 @@ with !important
 ----------------------------------------
 */
 
-$theme-layout-grid-use-important: false;
+$theme-layout-grid-use-important: false !default;
 
 /*
 ----------------------------------------
@@ -95,7 +95,7 @@ property of all site elements to
 ----------------------------------------
 */
 
-$theme-global-border-box-sizing: true;
+$theme-global-border-box-sizing: true !default;
 
 /*
 ----------------------------------------
@@ -103,10 +103,10 @@ Focus styles
 ----------------------------------------
 */
 
-$theme-focus-color: $theme-color-accent-cool;
-$theme-focus-offset: 0.5;
-$theme-focus-style: solid;
-$theme-focus-width: 0.5;
+$theme-focus-color: $theme-color-accent-cool !default;
+$theme-focus-offset: 0.5 !default;
+$theme-focus-style: solid !default;
+$theme-focus-width: 0.5 !default;
 
 /*
 ----------------------------------------
@@ -114,4 +114,4 @@ Icons
 ----------------------------------------
 */
 
-$theme-icon-image-size: 3;
+$theme-icon-image-size: 3 !default;

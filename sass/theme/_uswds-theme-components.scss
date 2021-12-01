@@ -18,185 +18,185 @@ https://designsystem.digital.gov/design-tokens
 */
 
 // Accordion
-$theme-accordion-border-width: 0.5;
-$theme-accordion-border-color: "base-lightest";
-$theme-accordion-font-family: "body";
+$theme-accordion-border-width: 0.5 !default;
+$theme-accordion-border-color: "base-lightest" !default;
+$theme-accordion-font-family: "body" !default;
 
 // Alert
-$theme-alert-bar-width: 1;
-$theme-alert-font-family: "ui";
-$theme-alert-icon-size: 4;
-$theme-alert-padding-x: 2.5;
-$theme-alert-padding-y: 2;
-$theme-alert-text-color: default;
-$theme-alert-text-reverse-color: default;
-$theme-alert-link-color: default;
-$theme-alert-link-reverse-color: default;
+$theme-alert-bar-width: 1 !default;
+$theme-alert-font-family: "ui" !default;
+$theme-alert-icon-size: 4 !default;
+$theme-alert-padding-x: 2.5 !default;
+$theme-alert-padding-y: 2 !default;
+$theme-alert-text-color: default !default;
+$theme-alert-text-reverse-color: default !default;
+$theme-alert-link-color: default !default;
+$theme-alert-link-reverse-color: default !default;
 
 // Banner
-$theme-banner-background-color: "base-lightest";
-$theme-banner-font-family: "ui";
-$theme-banner-link-color: default;
-$theme-banner-max-width: "desktop-lg";
+$theme-banner-background-color: "base-lightest" !default;
+$theme-banner-font-family: "ui" !default;
+$theme-banner-link-color: default !default;
+$theme-banner-max-width: "desktop-lg" !default;
 
 // Breadcrumb
-$theme-breadcrumb-background-color: "default";
-$theme-breadcrumb-font-size: "sm";
-$theme-breadcrumb-font-family: "body";
-$theme-breadcrumb-link-color: default;
-$theme-breadcrumb-min-width: "mobile-lg";
-$theme-breadcrumb-padding-bottom: 2;
-$theme-breadcrumb-padding-top: 2;
-$theme-breadcrumb-padding-x: 0;
-$theme-breadcrumb-separator-color: "base";
+$theme-breadcrumb-background-color: "default" !default;
+$theme-breadcrumb-font-size: "sm" !default;
+$theme-breadcrumb-font-family: "body" !default;
+$theme-breadcrumb-link-color: default !default;
+$theme-breadcrumb-min-width: "mobile-lg" !default;
+$theme-breadcrumb-padding-bottom: 2 !default;
+$theme-breadcrumb-padding-top: 2 !default;
+$theme-breadcrumb-padding-x: 0 !default;
+$theme-breadcrumb-separator-color: "base" !default;
 
 // Button
-$theme-button-font-family: "ui";
-$theme-button-border-radius: "md";
-$theme-button-small-width: 6;
-$theme-button-stroke-width: 2px;
+$theme-button-font-family: "ui" !default;
+$theme-button-border-radius: "md" !default;
+$theme-button-small-width: 6 !default;
+$theme-button-stroke-width: 2px !default;
 
 // Card
-$theme-card-border-color: "base-lighter";
-$theme-card-border-radius: "lg";
-$theme-card-border-width: 2px;
-$theme-card-gap: 2;
-$theme-card-flag-min-width: "tablet";
-$theme-card-flag-image-width: "card-lg";
-$theme-card-font-family: "body";
-$theme-card-header-typeset: "heading", "lg", 2;
-$theme-card-margin-bottom: 4;
-$theme-card-padding-perimeter: 3;
-$theme-card-padding-y: 2;
+$theme-card-border-color: "base-lighter" !default;
+$theme-card-border-radius: "lg" !default;
+$theme-card-border-width: 2px !default;
+$theme-card-gap: 2 !default;
+$theme-card-flag-min-width: "tablet" !default;
+$theme-card-flag-image-width: "card-lg" !default;
+$theme-card-font-family: "body" !default;
+$theme-card-header-typeset: "heading", "lg", 2 !default;
+$theme-card-margin-bottom: 4 !default;
+$theme-card-padding-perimeter: 3 !default;
+$theme-card-padding-y: 2 !default;
 
 // Collection
-$theme-collection-font-family: "ui";
-$theme-collection-header-typeset: "ui", "md", 3;
+$theme-collection-font-family: "ui" !default;
+$theme-collection-header-typeset: "ui", "md", 3 !default;
 
 // Footer
-$theme-footer-font-family: "body";
-$theme-footer-max-width: "desktop-lg";
+$theme-footer-font-family: "body" !default;
+$theme-footer-max-width: "desktop-lg" !default;
 
 // Form and input
-$theme-checkbox-border-radius: "sm";
-$theme-form-font-family: "ui";
-$theme-input-background-color: default;
-$theme-input-line-height: 3;
-$theme-input-max-width: "mobile-lg";
-$theme-input-select-border-width: 2px;
-$theme-input-select-size: 2.5;
-$theme-input-state-border-width: 0.5;
-$theme-input-tile-border-radius: "md";
-$theme-input-tile-border-width: 2px;
+$theme-checkbox-border-radius: "sm" !default;
+$theme-form-font-family: "ui" !default;
+$theme-input-background-color: default !default;
+$theme-input-line-height: 3 !default;
+$theme-input-max-width: "mobile-lg" !default;
+$theme-input-select-border-width: 2px !default;
+$theme-input-select-size: 2.5 !default;
+$theme-input-state-border-width: 0.5 !default;
+$theme-input-tile-border-radius: "md" !default;
+$theme-input-tile-border-width: 2px !default;
 
 // Header
-$theme-header-font-family: "ui";
-$theme-header-logo-text-width: 33%;
-$theme-header-max-width: "desktop-lg";
-$theme-header-min-width: "desktop";
+$theme-header-font-family: "ui" !default;
+$theme-header-logo-text-width: 33% !default;
+$theme-header-max-width: "desktop-lg" !default;
+$theme-header-min-width: "desktop" !default;
 
 // Hero
-$theme-hero-image: "#{$theme-image-path}/hero.png";
+$theme-hero-image: "#{$theme-image-path}/hero.png" !default;
 
 // Icon List
-$theme-icon-list-font-family: "body";
-$theme-icon-list-title-font-family: "heading";
+$theme-icon-list-font-family: "body" !default;
+$theme-icon-list-title-font-family: "heading" !default;
 
 // Identifier
-$theme-identifier-background-color: "base-darkest";
-$theme-identifier-font-family: "ui";
-$theme-identifier-identity-domain-color: "base-light";
-$theme-identifier-max-width: "desktop-lg";
-$theme-identifier-primary-link-color: default;
-$theme-identifier-secondary-link-color: "base-light";
+$theme-identifier-background-color: "base-darkest" !default;
+$theme-identifier-font-family: "ui" !default;
+$theme-identifier-identity-domain-color: "base-light" !default;
+$theme-identifier-max-width: "desktop-lg" !default;
+$theme-identifier-primary-link-color: default !default;
+$theme-identifier-secondary-link-color: "base-light" !default;
 
 // Modal
-$theme-modal-border-radius: "lg";
-$theme-modal-default-max-width: "mobile-lg";
-$theme-modal-lg-content-max-width: "tablet";
-$theme-modal-lg-max-width: "tablet-lg";
+$theme-modal-border-radius: "lg" !default;
+$theme-modal-default-max-width: "mobile-lg" !default;
+$theme-modal-lg-content-max-width: "tablet" !default;
+$theme-modal-lg-max-width: "tablet-lg" !default;
 
 // Pagination
-$theme-pagination-background-color: "default";
-$theme-pagination-breakpoint: "tablet";
-$theme-pagination-button-border-radius: "md";
-$theme-pagination-button-border-width: 1px;
-$theme-pagination-font-family: "ui";
+$theme-pagination-background-color: "default" !default;
+$theme-pagination-breakpoint: "tablet" !default;
+$theme-pagination-button-border-radius: "md" !default;
+$theme-pagination-button-border-width: 1px !default;
+$theme-pagination-font-family: "ui" !default;
 
 // Process List
-$theme-process-list-counter-background-color: "white";
-$theme-process-list-counter-border-color: "ink";
-$theme-process-list-counter-border-width: 0.5;
-$theme-process-list-counter-font-family: "ui";
-$theme-process-list-counter-font-size: "lg";
-$theme-process-list-counter-gap-color: "white";
-$theme-process-list-counter-gap-width: 0.5;
-$theme-process-list-counter-size: 5;
-$theme-process-list-counter-text-color: "ink";
-$theme-process-list-connector-color: "primary-lighter";
-$theme-process-list-connector-width: 1;
-$theme-process-list-font-family: "ui";
-$theme-process-list-font-size: "sm";
-$theme-process-list-heading-color: "ink";
-$theme-process-list-heading-font-family: "ui";
-$theme-process-list-heading-font-size: "lg";
+$theme-process-list-counter-background-color: "white" !default;
+$theme-process-list-counter-border-color: "ink" !default;
+$theme-process-list-counter-border-width: 0.5 !default;
+$theme-process-list-counter-font-family: "ui" !default;
+$theme-process-list-counter-font-size: "lg" !default;
+$theme-process-list-counter-gap-color: "white" !default;
+$theme-process-list-counter-gap-width: 0.5 !default;
+$theme-process-list-counter-size: 5 !default;
+$theme-process-list-counter-text-color: "ink" !default;
+$theme-process-list-connector-color: "primary-lighter" !default;
+$theme-process-list-connector-width: 1 !default;
+$theme-process-list-font-family: "ui" !default;
+$theme-process-list-font-size: "sm" !default;
+$theme-process-list-heading-color: "ink" !default;
+$theme-process-list-heading-font-family: "ui" !default;
+$theme-process-list-heading-font-size: "lg" !default;
 
 // Navigation
-$theme-navigation-font-family: "ui";
-$theme-megamenu-columns: 3;
+$theme-navigation-font-family: "ui" !default;
+$theme-megamenu-columns: 3 !default;
 
 // Search
-$theme-search-font-family: "ui";
-$theme-search-min-width: 27ch;
+$theme-search-font-family: "ui" !default;
+$theme-search-min-width: 27ch !default;
 
 // Sidenav
-$theme-sidenav-current-border-width: 0.5;
-$theme-sidenav-font-family: "ui";
+$theme-sidenav-current-border-width: 0.5 !default;
+$theme-sidenav-font-family: "ui" !default;
 
 // Site Alert
-$theme-site-alert-max-width: "desktop-lg";
+$theme-site-alert-max-width: "desktop-lg" !default;
 
 // Step indicator
-$step-indicator-background-color: "white";
-$theme-step-indicator-counter-gap: 0.5;
-$theme-step-indicator-counter-border-width: 0.5;
-$theme-step-indicator-font-family: "ui";
-$theme-step-indicator-heading-color: "ink";
-$theme-step-indicator-heading-font-family: "ui";
-$theme-step-indicator-heading-font-size: "lg";
-$theme-step-indicator-heading-font-size-small: "md";
-$theme-step-indicator-label-font-size: "sm";
-$theme-step-indicator-min-width: "tablet";
-$theme-step-indicator-segment-color-pending: "base-lighter";
-$theme-step-indicator-segment-color-complete: "primary-darker";
-$theme-step-indicator-segment-color-current: "primary";
-$theme-step-indicator-segment-gap: 2px;
-$theme-step-indicator-segment-height: 1;
-$theme-step-indicator-text-pending-color: "base-dark";
+$step-indicator-background-color: "white" !default;
+$theme-step-indicator-counter-gap: 0.5 !default;
+$theme-step-indicator-counter-border-width: 0.5 !default;
+$theme-step-indicator-font-family: "ui" !default;
+$theme-step-indicator-heading-color: "ink" !default;
+$theme-step-indicator-heading-font-family: "ui" !default;
+$theme-step-indicator-heading-font-size: "lg" !default;
+$theme-step-indicator-heading-font-size-small: "md" !default;
+$theme-step-indicator-label-font-size: "sm" !default;
+$theme-step-indicator-min-width: "tablet" !default;
+$theme-step-indicator-segment-color-pending: "base-lighter" !default;
+$theme-step-indicator-segment-color-complete: "primary-darker" !default;
+$theme-step-indicator-segment-color-current: "primary" !default;
+$theme-step-indicator-segment-gap: 2px !default;
+$theme-step-indicator-segment-height: 1 !default;
+$theme-step-indicator-text-pending-color: "base-dark" !default;
 
 // Summary box
-$theme-summary-box-background-color: "info-lighter";
-$theme-summary-box-border-color: "info-light";
-$theme-summary-box-border-width: 1px;
-$theme-summary-box-border-radius: "md";
-$theme-summary-box-font-family: "ui";
-$theme-summary-box-link-color: default;
-$theme-summary-box-text-color: default;
+$theme-summary-box-background-color: "info-lighter" !default;
+$theme-summary-box-border-color: "info-light" !default;
+$theme-summary-box-border-width: 1px !default;
+$theme-summary-box-border-radius: "md" !default;
+$theme-summary-box-font-family: "ui" !default;
+$theme-summary-box-link-color: default !default;
+$theme-summary-box-text-color: default !default;
 
 // Table
-$theme-table-border-color: default;
-$theme-table-header-background-color: "base-lighter";
-$theme-table-header-text-color: default;
-$theme-table-stripe-background-color: "base-lightest";
-$theme-table-stripe-text-color: default;
-$theme-table-text-color: default;
-$theme-table-sorted-header-background-color: "accent-cool-light";
-$theme-table-sorted-background-color: "accent-cool-lighter";
-$theme-table-sorted-stripe-background-color: "blue-cool-10v";
-$theme-table-sorted-icon-color: default;
-$theme-table-unsorted-icon-color: "base";
+$theme-table-border-color: default !default;
+$theme-table-header-background-color: "base-lighter" !default;
+$theme-table-header-text-color: default !default;
+$theme-table-stripe-background-color: "base-lightest" !default;
+$theme-table-stripe-text-color: default !default;
+$theme-table-text-color: default !default;
+$theme-table-sorted-header-background-color: "accent-cool-light" !default;
+$theme-table-sorted-background-color: "accent-cool-lighter" !default;
+$theme-table-sorted-stripe-background-color: "blue-cool-10v" !default;
+$theme-table-sorted-icon-color: default !default;
+$theme-table-unsorted-icon-color: "base" !default;
 
 // Tooltips
-$theme-tooltip-background-color: "ink";
-$theme-tooltip-font-color: "base-lightest";
-$theme-tooltip-font-size: "xs";
+$theme-tooltip-background-color: "ink" !default;
+$theme-tooltip-font-color: "base-lightest" !default;
+$theme-tooltip-font-size: "xs" !default;
