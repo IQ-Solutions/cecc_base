@@ -6,9 +6,9 @@ dependencies:
   module:
     - views
   theme:
-    - cecc_theme
+    - cecc_base
 id: views_block__commerce_user_orders_recent_orders
-theme: cecc_theme
+theme: cecc_base
 region: content
 weight: 0
 provider: null

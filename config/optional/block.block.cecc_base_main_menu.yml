@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - cecc_theme
+    - cecc_base
 id: cecc_theme_main_menu
-theme: cecc_theme
+theme: cecc_base
 region: primary_menu
 weight: 10
 provider: null

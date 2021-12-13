@@ -5,9 +5,9 @@ dependencies:
     - cecc_cart
     - system
   theme:
-    - cecc_theme
+    - cecc_base
 id: cartbutton
-theme: cecc_theme
+theme: cecc_base
 region: breadcrumb
 weight: -10
 provider: null

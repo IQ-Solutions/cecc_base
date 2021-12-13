@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - cecc_theme
+    - cecc_base
 id: cecc_theme_messages
-theme: cecc_theme
+theme: cecc_base
 region: highlighted
 weight: -50
 provider: null

@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - cecc_theme
+    - cecc_base
 id: healthtopicsmobile
-theme: cecc_theme
+theme: cecc_base
 region: sidebar_first
 weight: -14
 provider: null

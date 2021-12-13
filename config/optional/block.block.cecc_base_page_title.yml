@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - cecc_theme
+    - cecc_base
 id: cecc_theme_page_title
-theme: cecc_theme
+theme: cecc_base
 region: page_title
 weight: -14
 provider: null

@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - cecc_theme
+    - cecc_base
 id: browsepublications
-theme: cecc_theme
+theme: cecc_base
 region: sidebar_first
 weight: -17
 provider: null

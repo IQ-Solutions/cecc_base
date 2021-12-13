@@ -5,9 +5,9 @@ dependencies:
     - commerce_checkout
     - system
   theme:
-    - cecc_theme
+    - cecc_base
 id: checkoutprogress
-theme: cecc_theme
+theme: cecc_base
 region: content
 weight: -16
 provider: null

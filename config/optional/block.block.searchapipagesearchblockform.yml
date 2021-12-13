@@ -6,9 +6,9 @@ dependencies:
   module:
     - search_api_page
   theme:
-    - cecc_theme
+    - cecc_base
 id: searchapipagesearchblockform
-theme: cecc_theme
+theme: cecc_base
 region: secondary_menu
 weight: -8
 provider: null

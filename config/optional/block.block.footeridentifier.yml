@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - cecc_theme
+    - cecc_base
 id: footeridentifier
-theme: cecc_theme
+theme: cecc_base
 region: footer_secondary
 weight: 0
 provider: null
