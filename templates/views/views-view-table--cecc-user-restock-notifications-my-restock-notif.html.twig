@@ -99,10 +99,10 @@
     {% for row in rows %}
       <tr{{ row.attributes }}>
         <td>
-          {{- row.columns.title }}
+          {{- row.columns.title.content -}}
         </td>
         <td class="text-right">
-            {{- row.columns.link_flag }}
+            {{- row.columns.link_flag.content -}}
         </td>
       </tr>
     {% endfor %}
