@@ -141,3 +141,7 @@ function cecc_base_preprocess_menu_local_tasks(&$variables) {
     }
   }
 }
+
+function cecc_base_preprocess(&$variables) {
+  $variables['cecc_gtm_id'] = theme_get_setting('cecc_gtm_id');
+}
