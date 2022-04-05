@@ -3,7 +3,7 @@ base theme: uswds_base
 
 name: 'CECC Base Theme'
 description: 'Default theme for IQ Solutions CECC'
-package: 'CECC Base Theme'
+package: 'CECC'
 core_version_requirement: ^8 || ^9
 logo: 'logo.png'
 screenshot: 'screenshot.png'
