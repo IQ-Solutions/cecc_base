@@ -5,7 +5,7 @@ dependencies:
     - system
   theme:
     - cecc_base
-id: cecc_theme_branding
+id: cecc_base_branding
 theme: cecc_base
 region: header
 weight: 0

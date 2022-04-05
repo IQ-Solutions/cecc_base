@@ -5,7 +5,7 @@ dependencies:
     - system
   theme:
     - cecc_base
-id: cecc_theme_messages
+id: cecc_base_messages
 theme: cecc_base
 region: highlighted
 weight: -50

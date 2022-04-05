@@ -5,7 +5,7 @@ dependencies:
     - system
   theme:
     - cecc_base
-id: cecc_theme_content
+id: cecc_base_content
 theme: cecc_base
 region: content
 weight: -13

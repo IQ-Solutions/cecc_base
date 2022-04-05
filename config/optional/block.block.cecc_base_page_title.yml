@@ -3,7 +3,7 @@ status: true
 dependencies:
   theme:
     - cecc_base
-id: cecc_theme_page_title
+id: cecc_base_page_title
 theme: cecc_base
 region: page_title
 weight: -14
