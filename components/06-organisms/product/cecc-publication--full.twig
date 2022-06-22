@@ -23,18 +23,20 @@
 
   <div class="display-flex flex-justify padding-bottom-2">
     {# Add to favorites. #}
-    {% if user.hasPermission('flag favorites') %}
-      {{- product.flag_favorites }}
-    {% else %}
-      {# If the user doesn't have permissions direct them to login. #}
-      <div class="flag flag-favorites">
-        <a title="Add to Favorites" href="{{ path('user.login', {}, {'query': {'destination': path('<current>') }}) }}" class="text-bold font-body-xs" rel="nofollow">
-          {{ "Add to Favorites"|t }}
-          <svg class="usa-icon color-secondary" aria-hidden="true" focusable="false" role="img">
-            <use xlink:href="/{{ directory }}/assets/img/sprite.svg#favorite_border"></use>
-          </svg>
-        </a>
-      </div>
+    {% if user_registration_enabled %}
+      {% if user.hasPermission('flag favorites') %}
+        {{- product.flag_favorites }}
+      {% else %}
+        {# If the user doesn't have permissions direct them to login. #}
+        <div class="flag flag-favorites">
+          <a title="Add to Favorites" href="{{ path('user.login', {}, {'query': {'destination': path('<current>') }}) }}" class="text-bold font-body-xs" rel="nofollow">
+            {{ "Add to Favorites"|t }}
+            <svg class="usa-icon color-secondary" aria-hidden="true" focusable="false" role="img">
+              <use xlink:href="/{{ directory }}/assets/img/sprite.svg#favorite_border"></use>
+            </svg>
+          </a>
+        </div>
+      {% endif %}
     {% endif %}
 
     {# Alternate language link/link text. #}

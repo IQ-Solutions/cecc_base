@@ -142,6 +142,20 @@ function cecc_base_preprocess_menu_local_tasks(&$variables) {
   }
 }
 
+/**
+ * Adds GTM code
+ */
 function cecc_base_preprocess(&$variables) {
   $variables['cecc_gtm_id'] = theme_get_setting('cecc_gtm_id');
+}
+
+/**
+ * Implements hook_preprocess_commerce_product().
+ * 
+ * Checks to see if user registration is allowed. 
+ */
+function cecc_base_preprocess_commerce_product(&$variables) {
+  $user_settings = \Drupal::config('user.settings');
+
+  $variables['user_registration_enabled'] = $user_settings->get('register') !== 'admin_only';
 }
