@@ -146,7 +146,8 @@
 
   {# Show About Quantity limits if the Publication is orderable #}
   {% if 'Off' in product.field_download_only.0 %}
-    {{ drupal_entity('block', 'aboutquantitylimits', check_access=false) }}
+    {% block quantity_limits %}
+    {% endblock %}
   {% endif %}
 
   {% if product.field_cecc_related_publication.0 %}
@@ -159,7 +160,8 @@
 
   {# Browse all publications link block. #}
   <div class="margin-y-4">
-    {{ drupal_block('cecc_browse_publications') }}
+    {% block browse_publications %}
+    {% endblock %}
   </div>
 
   {#
@@ -167,7 +169,8 @@
     This syntax makes sure to include title of block along with content.
   #}
   <div class="margin-y-4">
-    {{ drupal_entity('block', 'gethelporderingpublications', check_access=false) }}
+    {% block get_help_ordering_publications %}
+    {% endblock %}
   </div>
 
 </article>

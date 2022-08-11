@@ -1,0 +1,44 @@
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="featured-box padding-x-3 padding-top-1 padding-bottom-3 margin-bottom-3">
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
+
+  {% if rows -%}
+    <header>
+      <h2>{{ 'Featured Publication'|t }}</h2>
+    </header>
+  {% endif %}
+
+  {{ exposed }}
+  {{ attachment_before }}
+
+  {% if rows -%}
+    {{ rows }}
+  {% elseif empty -%}
+    {{ empty }}
+  {% endif %}
+  {{ pager }}
+
+  {{ attachment_after }}
+  {{ more }}
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
+  </div>
+
+  {# Browse all publications link block. #}
+  {% block cecc_browse_publications %}
+
+  {% endblock %}
+</div>

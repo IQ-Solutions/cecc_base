@@ -1,1 +1,14 @@
-{% include "@organisms/product/cecc-publication--full.twig" %}
+{% embed "@organisms/product/cecc-publication--full.twig" %}
+
+  {% block quantity_limits %}
+    {{ drupal_entity('block', 'aboutquantitylimits', check_access=false) }}
+  {% endblock %}
+
+  {% block browse_publications %}
+    {{ drupal_block('cecc_browse_publications') }}
+  {% endblock %}
+
+  {% block get_help_ordering_publications %}
+    {{ drupal_entity('block', 'gethelporderingpublications', check_access=false) }}
+  {% endblock %}
+{% endembed %}

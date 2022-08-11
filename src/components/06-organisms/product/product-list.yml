@@ -1,0 +1,17 @@
+---
+context:
+  search: true
+  product_url: javascript:void(0)
+  image: <img loading="lazy" src="https://catalog.ninds.nih.gov/sites/default/files/styles/cart_list/public/2021-08/tremor.jpg?itok=Z_KJSxxJ" width="120" height="120" alt="Tremor" typeof="foaf:Image">
+  title: Test product
+  date: 12/1/2021
+  description: >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis blandit nunc, ac pharetra lorem.
+    In quam erat, tristique et lorem eu, fringilla condimentum ante. Pellentesque vitae mi auctor, lacinia
+    felis et, consectetur velit. Mauris sit amet tellus bibendum, commodo mi quis, porttitor mi.
+    Curabitur quis mi erat.
+  downloadable: true
+  download_only: false
+  download_url: javascript:void(0)
+  directory: .
+  file_size: 230.4 KB

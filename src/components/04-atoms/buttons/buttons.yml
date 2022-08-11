@@ -1,0 +1,40 @@
+---
+context:
+  modifier: ''
+  text: Default
+  is_demo: true
+  aria_disabled: false
+
+variants:
+  - name: cool
+    context:
+      modifier: usa-button--accent-cool
+      text: Accent cool
+  - name: warm
+    context:
+      modifier: usa-button--accent-warm
+      text: Accent warm
+  - name: base
+    context:
+      modifier: usa-button--base
+      text: Base
+  - name: big
+    context:
+      modifier: usa-button--big
+      text: Big button
+  - name: outline_inverse
+    context:
+      modifier: usa-button--outline usa-button--inverse
+      text: Outline inverse
+  - name: outline
+    context:
+      modifier: usa-button--outline
+      text: Outline
+  - name: secondary
+    context:
+      modifier: usa-button--secondary
+      text: Secondary
+  - name: unstyled
+    context:
+      modifier: usa-button--unstyled
+      text: Unstyled button
