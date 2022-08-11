@@ -1,6 +1,6 @@
-const Attributes = require('../src/lib/attributes.cjs');
+const Attributes = require('../lib/attributes.cjs');
 const twigDrupal = require('twing-drupal-filters')
-const createAttributesFunction = require('../src/lib/twig/functions/createAttribute.js');
+const createAttributesFunction = require('../lib/twig/functions/createAttribute.js');
 
 const path = require('path');
 
