@@ -33,7 +33,7 @@ libraries:
 
 components:
   namespaces:
-    atoms: components/04-atoms
-    molecules: components/05-molecules
-    organisms: components/06-organisms
-    pages: components/07-pages
+    atoms: src/components/04-atoms
+    molecules: src/components/05-molecules
+    organisms: scr/components/06-organisms
+    pages: src/components/07-pages
