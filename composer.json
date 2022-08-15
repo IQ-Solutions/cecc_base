@@ -28,7 +28,7 @@
     "source": "https://github.com/IQ-Solutions/cecc_base"
   },
   "require": {
-    "drupal/uswds_base": "^2",
+    "drupal/uswds_base": ">=2.13",
     "drupal/components": "^2"
   }
 }
