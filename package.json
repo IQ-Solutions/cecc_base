@@ -17,10 +17,11 @@
     }
   },
   "scripts": {
-    "prebuild:css": "sass/styles.scss assets/css/uswds.css",
+    "prebuild:css": "sass sass/styles.scss --include-path=./node_modules/uswds/src assets/css/uswds.css",
     "build:css": "postcss assets/css/uswds.css -o assets/css/uswds.min.css",
     "build": "npm run build:css",
     "build:watch": "watch 'npm run build' sass components",
+
     "storybook": "NODE_OPTIONS=\"--inspect\" start-storybook -p 3000",
     "build:dev": "webpack --config ./webpack.dev.js"
   },
