@@ -32,6 +32,6 @@
  */
 #}
 
-<a href="{{ url('entity.taxonomy_term.canonical', { 'taxonomy_term': fields.tid.content|remove_html_comments_as_string |trim })}}">
+<a href="{{ url('entity.taxonomy_term.canonical', { 'taxonomy_term': fields.tid.content|striptags|trim })}}">
   {{ fields.name.content }}
 </a>
