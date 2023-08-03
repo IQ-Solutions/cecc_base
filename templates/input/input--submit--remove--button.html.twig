@@ -10,7 +10,7 @@
  * @see template_preprocess_input()
  */
 #}
-{% spaceless %}
+{% apply spaceless %}
     {% if input_group %}
         <div class="input-group usa-form-group">
     {% endif %}
@@ -37,4 +37,5 @@
     {% endif %}
 
     {{ children }}
-{% endspaceless %}
+{% endapply %}
+
