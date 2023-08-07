@@ -29,6 +29,6 @@
   },
   "require": {
     "drupal/uswds_base": ">=2.13",
-    "drupal/components": "^2"
+    "drupal/components": "^3"
   }
 }
